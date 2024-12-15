@@ -17,7 +17,9 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
-    console.log(userData);
+    if(!userData?.$id){
+        console.log(userData, "userid is missing");
+    }
     
     const submit = async (data) => {
         console.log(userData);
